@@ -25,17 +25,17 @@ Download and include multipleselect.js and jQuery (the one in this project or yo
 
 Place a multiple select element in your page:
 
-`<select multiple="multiple">`
-`	<option value="1">One</option>`
-`	<option value="2">Two</option>`
-`	<option value="3" selected="selected">Three</option>`
-`	<option value="4" selected="selected">Four</option>`
-`</select>`
+	<select multiple="multiple">
+		<option value="1">One</option>
+		<option value="2">Two</option>
+		<option value="3" selected="selected">Three</option>
+		<option value="4" selected="selected">Four</option>
+	</select>
 
 Use the following:
 
-`var select = $("select");`
-`var ms = new MultipleSelect(select);`
+	var select = $("select");
+	var ms = new MultipleSelect(select);
 
 If all went well, you should see two lists. When you click an item in either list, it will move to the other.
 
