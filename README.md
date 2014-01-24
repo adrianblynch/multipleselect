@@ -1,7 +1,7 @@
 MultipleSelect
 =============
 
-Change a multiple select into something a little friendlier to use.
+JS/jQuery to turn a multiple select into something a little nicer and friendlier to use.
 
 Background
 ----------
