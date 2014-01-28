@@ -3,69 +3,53 @@
 <head>
 	<meta charset="utf-8" />
 	<title>MultipleSelect</title>
+	<link rel="stylesheet" href="multipleselect.css" />
 	<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="multipleselect.js"></script>
 	<script>
 		$(function() {
 
-			stuff = $("select[name='stuff']");
-			stuffMS =  new MultipleSelect(stuff);
+			var mySelect = $("select");
+			var myMS =  new MultipleSelect(mySelect);
 
-			$("#getStuffIDs").click(function(e) {
+			$("#showValues").click(function(e) {
 				e.preventDefault();
-				console.log("The chosen ones are...", stuff.val());
-			})
+				console.log(mySelect.val());
+			});
 
-			stuffMS.refresh();
+			$("#addOption").click(function(e) {
+				e.preventDefault();
+				var n = $("option", mySelect).length + 1;
+				var option = "<option value='" + n + "'>Option " + n + "</option>";
+				mySelect.append(option);
+				myMS.refresh();
+			});
+
+			$("#showHideSelect").click(function(e) {
+				e.preventDefault();
+				mySelect.toggle();
+			});
 
 		});
 	</script>
 </head>
 <body>
 
-<h1>MultipleSelect Examples</h1>
+	<h1>MultipleSelect Examples</h1>
 
-<div id="staticStuff">
-	<select name="stuff" multiple="multiple">
-		<option value="1">Option 1</option>
-		<option value="2">Option 2</option>
-		<option value="3">Option 3</option>
-		<option value="4">Option 4</option>
-		<option value="5">Option 5</option>
-		<option value="6">Option 6</option>
-	</select>
-	<button id="getStuffIDs">Which ones were selected?</button>
-</div>
-
-
-
-<style>
-	#staticStuff ul {
-		list-style: none;
-		margin: 0px;
-		padding: 0px;
-	}
-	#staticStuff div.selected,
-	#staticStuff div.selectable {
-		border: solid 1px #ccc;
-		width: 360px;
-		height: 240px;
-		float: left;
-		overflow-y: auto;
-		border-radius: 3px;
-		margin-left: 25px;
-	}
-	#staticStuff div.selected li,
-	#staticStuff div.selectable li {
-		padding: 10px;
-		cursor: pointer;
-	}
-	#staticStuff div.selected li.hover,
-	#staticStuff div.selectable li.hover {
-		background-color: #08c;
-		color: #eee;
-	}
-</style>
+	<form>
+		<select multiple="multiple">
+			<option value="1">Option 1</option>
+			<option value="2">Option 2</option>
+			<option value="3" selected="selected">Option 3</option>
+			<option value="4" selected="selected">Option 4</option>
+			<option value="5">Option 5</option>
+			<option value="6">Option 6</option>
+		</select>
+		<button id="showValues">Show selected values</button><br />
+		<button id="addOption">Add another option</button><br />
+		<button id="showHideSelect">Show/Hide underlying select</button><br />
+	</form>
 
 </body>
 </html>

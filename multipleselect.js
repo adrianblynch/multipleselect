@@ -24,6 +24,9 @@ MultipleSelect = function(select, options) {
 			- Group creation of HTML and add to the DOM in one hit
 			- Use native JS in place of jQuery
 			- Don't call refresh() every time itemClicked() is called, instead, move items manually
+		- Add events for:
+			- On selected
+			- On unselected
 	*/
 
 	select = $(select);
@@ -124,8 +127,7 @@ MultipleSelect = function(select, options) {
 		$("ul", selectedItems).append(item);
 	}
 
-	// Init
-
+	// Initialise
 	self.refresh();
 
 }
