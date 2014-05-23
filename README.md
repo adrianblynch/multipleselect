@@ -21,7 +21,7 @@ This is not a jQuery plugin but it does make use of jQuery.
 Quick start
 -----------
 
-Download and include multipleselect.js and jQuery (the one in this project or your own) in you page.
+Download and include multipleselect.js and jQuery (the one in this project or your own) in your page.
 
 Place a multiple select element in your page:
 
